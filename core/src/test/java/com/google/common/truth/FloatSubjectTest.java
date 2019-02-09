@@ -557,7 +557,7 @@ public class FloatSubjectTest extends BaseSubjectTestCase {
   
   @Test(expected=UnsupportedOperationException.class)
   public void testTolerantFloatComparison() {
-    TolerantFloatComparison testInstantiation = new TolerantFloatComparison();
+    TolerantFloatComparison testInstantiation = new FloatSubject.TolerantFloatComparison();
     int hashCode = testInstantiation.hashCode();
   }
 }
