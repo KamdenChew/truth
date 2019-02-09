@@ -1451,7 +1451,7 @@ public class MultimapSubjectTest extends BaseSubjectTestCase {
     return expectFailure.whenTesting().that(actual);
   }
   
-  @Test
+  @Test(expected=NullPointerException.class)
   public void testListMultimapSubject() {
     ListMultimapSubject lmms1 = new ListMultimapSubject(null, null, null);
     ListMultimapSubject lmms2 = new ListMultimapSubject(null, null, null);
