@@ -1450,4 +1450,11 @@ public class MultimapSubjectTest extends BaseSubjectTestCase {
   private MultimapSubject expectFailureWhenTestingThat(Multimap<?, ?> actual) {
     return expectFailure.whenTesting().that(actual);
   }
+  
+  @Test
+  public void testListMultimapSubject() {
+    ListMultimapSubject lmms1 = new ListMultimapSubject("This argument is called format", null);
+    ListMultimapSubject lmms2 = new ListMultimapSubject("This argument is called format", null);
+    assert(lmms1.isEqualTo(lmms2));
+  }
 }
