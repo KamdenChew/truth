@@ -1453,8 +1453,8 @@ public class MultimapSubjectTest extends BaseSubjectTestCase {
   
   @Test
   public void testListMultimapSubject() {
-    ListMultimapSubject lmms1 = new ListMultimapSubject("This argument is called format", null);
-    ListMultimapSubject lmms2 = new ListMultimapSubject("This argument is called format", null);
+    ListMultimapSubject lmms1 = new ListMultimapSubject(null, null, null);
+    ListMultimapSubject lmms2 = new ListMultimapSubject(null, null, null);
     assert(lmms1.isEqualTo(lmms2));
   }
 }
