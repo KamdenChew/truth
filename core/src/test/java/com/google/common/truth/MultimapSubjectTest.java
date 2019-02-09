@@ -1455,6 +1455,6 @@ public class MultimapSubjectTest extends BaseSubjectTestCase {
   public void testListMultimapSubject() {
     ListMultimapSubject lmms1 = new ListMultimapSubject(null, null, null);
     ListMultimapSubject lmms2 = new ListMultimapSubject(null, null, null);
-    assert(lmms1.isEqualTo(lmms2));
+    lmms1.isEqualTo(lmms2);
   }
 }
