@@ -554,17 +554,10 @@ public class FloatSubjectTest extends BaseSubjectTestCase {
   private FloatSubject expectFailureWhenTestingThat(Float actual) {
     return expectFailure.whenTesting().that(actual);
   }
-}
-
-  @Test
+  
+  @Test(expected=UnsupportedOperationException.class)
   public void testTolerantFloatComparison() {
-    TolerantFloatComparison testInstantiation = new TolerantFloatComparison.TolerantFloatComparison();
-    boolean throwsError = false;
-    try {
-      int hashCode = testInstantiation.hashCode();
-    } catch(UnsupportedOperationException e) {
-      throwsError = true;
-    }
-    
-    assert(throwsError);
+    TolerantFloatComparison testInstantiation = new TolerantFloatComparison();
+    int hashCode = testInstantiation.hashCode();
   }
+}
