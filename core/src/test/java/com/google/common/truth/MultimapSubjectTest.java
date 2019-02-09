@@ -1453,8 +1453,8 @@ public class MultimapSubjectTest extends BaseSubjectTestCase {
   
   @Test(expected=NullPointerException.class)
   public void testListMultimapSubject() {
-    ListMultimapSubject lmms1 = new ListMultimapSubject(FailureMetadata.forFailureStrategy, null, null);
-    ListMultimapSubject lmms2 = new ListMultimapSubject(FailureMetadata.forFailureStrategy, null, null);
+    ListMultimapSubject lmms1 = new ListMultimapSubject(FailureMetadata.forFailureStrategy(null), null, null);
+    ListMultimapSubject lmms2 = new ListMultimapSubject(FailureMetadata.forFailureStrategy(null), null, null);
     lmms1.isEqualTo(lmms2);
   }
 }
