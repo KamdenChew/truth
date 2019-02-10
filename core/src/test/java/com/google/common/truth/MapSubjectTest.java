@@ -1381,4 +1381,13 @@ public class MapSubjectTest extends BaseSubjectTestCase {
   private MapSubject expectFailureWhenTestingThat(Map<?, ?> actual) {
     return expectFailure.whenTesting().that(actual);
   }
+  
+  @Test(expected=NullPointerException.class)
+  public void testListMultimapSubject() {
+    ListMultimapSubject lmms1 = new ListMultimapSubject(FailureMetadata.forFailureStrategy(null), null, null);
+    ListMultimapSubject lmms2 = new ListMultimapSubject(FailureMetadata.forFailureStrategy(null), null, null);
+    lmms1.isEqualTo(lmms2);
+  }
+}
+  
 }
