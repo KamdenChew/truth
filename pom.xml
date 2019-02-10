@@ -274,16 +274,23 @@
             </links>
           </configuration>
         </plugin>
-        <plugin>
-        	<groupId>org.apache.maven.plugins</groupId>
-        	<artifactId>maven-jar-plugin</artifactId>
-        	<version>2.5</version>
-        	<configuration>
-         	 <archive>
-          	  <manifestFile>${project.build.outputDirectory}</manifestFile>
-         	 </archive>
-       		</configuration>
-      </plugin>
+        
+	   <plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-jar-plugin</artifactId>
+		<executions>
+			<execution>
+          			<phase>package</phase>
+          			<goals>
+              			<goal>jar</goal>
+          			</goals>
+          			<configuration>
+		      			<forceCreation>true</forceCreation>
+         			</configuration>
+        		</execution>
+		</executions>
+	</plugin>   
+	      
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>animal-sniffer-maven-plugin</artifactId>
