@@ -233,7 +233,25 @@
   <build>
     <pluginManagement>
       <plugins>
-        <plugin>
+        
+	<plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>3.2.1</version>
+        <configuration>
+          <!-- put your configurations here -->
+        </configuration>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+	      
+	<plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
           <configuration>
@@ -252,6 +270,10 @@
               <link>https://google.github.io/guava/releases/snapshot-jre/api/docs</link>
             </links>
           </configuration>
+        </plugin>
+        <plugin>
+          <artifactId>maven-jar-plugin</artifactId>
+          <version>2.5</version> <!-- work around ubuntu bug -->
         </plugin>
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
@@ -309,7 +331,6 @@
                     satisfy requireUpperBoundDeps, which apparently still sees
                     the original request for the newer version.
                     requireUpperBoundDeps's behavior is probably a good thing.
-
                     But, in what seems like a bug, dependencyConvergence catches
                     certain upper-bound problems that requireUpperBoundDeps does
                     not. To be clear, it's usually *not* a bug for
@@ -327,7 +348,6 @@
                     to depend on guava-26.0, which depends on
                     checker-compat-qual 2.5.3, then requireUpperBoundDeps
                     detected the problem.
-
                     I filed a bug against Maven:
                     https://issues.apache.org/jira/browse/MENFORCER-316
                     -->
@@ -360,10 +380,6 @@
             </execution>
           </executions>
         </plugin>
-	<plugin>
-        	<artifactId>maven-jar-plugin</artifactId>
-        	<version>2.5</version> <!-- work around ubuntu bug -->
-        </plugin>     
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>gwt-maven-plugin</artifactId>
@@ -375,24 +391,6 @@
           <version>0.5.1</version>
         </plugin>
       </plugins>
-        
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-shade-plugin</artifactId>
-        <version>3.2.1</version>
-        <configuration>
-          <outputDirectory>.</outputDirectory>
-        </configuration>
-        <executions>
-          <execution>
-            <phase>package</phase>
-            <goals>
-              <goal>shade</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>   
-        
     </pluginManagement>
     <plugins>
       <!--
