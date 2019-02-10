@@ -1389,5 +1389,3 @@ public class MapSubjectTest extends BaseSubjectTestCase {
     lmms1.isEqualTo(lmms2);
   }
 }
-  
-}
