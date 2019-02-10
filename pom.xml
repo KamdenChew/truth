@@ -374,39 +374,6 @@
           <artifactId>protobuf-maven-plugin</artifactId>
           <version>0.5.1</version>
         </plugin>
-          
-          <plugin>
-        	<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-shade-plugin</artifactId>
-		<version>2.1</version>
-		<configuration>
-		  <artifactSet>
-                  <includes>
-                  	<include>com.google.truth</include>
-		  	<include>com.google.truth.extensions</include>
-			<include>com.google.guava</include>
-			<include>org.checkerframework</include>
-			<include>junit</include>
-		  	<include>com.googlecode.java-diff-utils</include>
-		  	<include>com.google.gwt</include>
-		  	<include>com.google.auto.value</include>
-		  	<include>com.google.testing.compile</include>
-		  	<include>com.google.errorprone</include>
-		 	 <include>com.google.protobuf</include>
-		  	<include>com.google.re2j</include>
-		</includes>
-              </artifactSet>
-		</configuration>
-		<executions>
-		  <execution>
-		    <phase>package</phase>
-		    <goals>
-		      <goal>shade</goal>
-		    </goals>
-		  </execution>
-		</executions>
-      	</plugin>
-
       </plugins>
     </pluginManagement>
     <plugins>
