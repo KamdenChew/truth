@@ -231,9 +231,7 @@
     <url>scm:git:git@github.com:google/truth.git</url>
   </scm>
   <build>
-    <pluginManagement>
-      <plugins>
-        
+    
 	<plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
@@ -251,7 +249,9 @@
           </execution>
         </executions>
       </plugin>
-	      
+	  
+<pluginManagement>
+      <plugins>   
 	<plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
