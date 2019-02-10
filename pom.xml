@@ -231,14 +231,15 @@
     <url>scm:git:git@github.com:google/truth.git</url>
   </scm>
   <build>
-    
-	<plugin>
+    <pluginManagement>
+      <plugins>   
+	
+       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-shade-plugin</artifactId>
         <version>3.2.1</version>
         <configuration>
-          <finalName>${project.artifactId}-${project.version}-renamed</finalName>
-          <outputDirectory>../truth</outputDirectory>
+          <!-- put your configurations here -->
         </configuration>
         <executions>
           <execution>
@@ -250,8 +251,6 @@
         </executions>
       </plugin>
 	  
-<pluginManagement>
-      <plugins>   
 	<plugin>
           <artifactId>maven-javadoc-plugin</artifactId>
           <version>${maven-javadoc-plugin.version}</version>
